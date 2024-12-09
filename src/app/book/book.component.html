@@ -1,0 +1,14 @@
+<form (ngSubmit)="addBook()">
+    <input [(ngModel)]="title" name="title" type="text" placeholder="Enter Title">
+    <input  [(ngModel)]="author" name="author" type="text" placeholder="Enter Author">
+    <button type="submit">Add Book</button>
+</form>
+
+<h1>Book List</h1>
+
+<ul>
+    <li *ngFor="let book of books">
+        {{book.id}} {{book.title}} {{book.author}}
+        <button (click)="deleteBook(book.id)">Delete</button>
+    </li>
+</ul>
